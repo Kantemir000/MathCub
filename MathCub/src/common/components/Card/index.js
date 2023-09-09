@@ -7,6 +7,9 @@ const StyledCardContainer = styled.section`
     margin-top: 2rem;
     border: 0.2rem solid #2a2c3c;
     box-shadow: 0px 5px 10px 2px rgba(42, 44, 60, 0.2);
+    @media (max-width: 576px) {
+        padding: 2rem;
+    }
 `
 
 const StyledTitle = styled.h2`
@@ -22,9 +25,12 @@ const StyledTitle = styled.h2`
         height: 0.2rem;
         background-color: rgba(42, 44, 60, 0.518);
     }
+    @media (max-width: 576px) {
+        font-size: 2.5rem;
+    }
 `
 
-const Card = ({title, children}) => {
+const Card = ({ title, children }) => {
     return (
         <StyledCardContainer>
             <StyledTitle>{title}</StyledTitle>

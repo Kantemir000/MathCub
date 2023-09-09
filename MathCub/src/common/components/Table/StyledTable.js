@@ -5,10 +5,12 @@ const StyledTableWrapper = styled.div`
     overflow: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
-
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
+    }
+    &:hover {
+        scrollbar-width: thin;
     }
 `
 

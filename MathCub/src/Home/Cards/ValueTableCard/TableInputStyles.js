@@ -13,6 +13,7 @@ const StyledRandomForm = styled.form`
 `
 
 const StyledRandom = styled.div`
+    overflow: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,24 +21,7 @@ const StyledRandom = styled.div`
     border: .2rem solid #2a2c3c;
     padding: 0.5rem;
     border-radius: 100vmax;
-    width: 92.45%;
-    @media (max-width: 1200px) {
-        width: 90.7%;
-    }
-
-    @media (max-width: 992px) {
-        width: 87.3%;
-    }
-
-    @media (max-width: 768px) {
-        width: 82.4%;
-    }
-
-    @media (max-width: 576px) {
-        max-width: 100%;
-        width: 100%;
-    }
-    
+    width: 100%;
 `
 
 const StyledRandomNumbers = styled.div`
@@ -53,6 +37,9 @@ const StyledRandomNumbers = styled.div`
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
+    }
+    &:hover {
+        scrollbar-width: thin;
     }
 `
 
@@ -85,6 +72,10 @@ const StyledAddButton = styled(Button)`
     background: url('${plus}') center center/cover no-repeat;
     border: none;
     cursor: pointer;
+    &:hover {
+        filter: contrast(2.4);
+        transition: all 0.3s;
+    }
 `
 
 const StyledResultButton = styled(Button)`
