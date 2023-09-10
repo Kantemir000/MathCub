@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Button from "../../../common/components/Button";
 import { plus } from "../../../common/icons";
+import StyledScrollbar from "../../../common/components/Card/StyledScrollbar";
 
 const StyledRandomForm = styled.form`
     display: flex;
@@ -13,7 +14,6 @@ const StyledRandomForm = styled.form`
 `
 
 const StyledRandom = styled.div`
-    overflow: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,22 +25,13 @@ const StyledRandom = styled.div`
 `
 
 const StyledRandomNumbers = styled.div`
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 1rem;
     transition: all 1s;
     max-width: 100%;
-    &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-    }
-    &:hover {
-        scrollbar-width: thin;
-    }
+    ${StyledScrollbar}
 `
 
 const StyledRandomNumberInput = styled.input`
@@ -78,23 +69,4 @@ const StyledAddButton = styled(Button)`
     }
 `
 
-const StyledResultButton = styled(Button)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem 1.2rem;
-    border-radius: 100vmax;
-    background-color: #8285a6;
-    font-size: 1.6rem;
-    line-height: 1em;
-    font-weight: 400;
-    color: rgb(25, 26, 35);
-    border: 0;
-
-    &:hover{
-        filter: contrast(2.4);
-        transition: all 0.3s;
-    }
-`
-
-export { StyledAddButton, StyledRandom, StyledRandomForm, StyledRandomNumberInput, StyledRandomNumbers, StyledResultButton }
+export { StyledAddButton, StyledRandom, StyledRandomForm, StyledRandomNumberInput, StyledRandomNumbers }
