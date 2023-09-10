@@ -40,7 +40,7 @@ const NumberInput = ({ id, isLast = false }) => {
 
 const TableInputs = () => {
     const { inputs } = useSelector((state) => state.randomInputSlice);
-    console.log(inputs);
+
     return (
         <>
             {inputs.map((_, index) => {
@@ -53,7 +53,6 @@ const TableInputs = () => {
 }
 
 const TableInputForm = () => {
-
     return (
         <StyledRandomForm>
             <StyledRandom>
