@@ -1,6 +1,6 @@
 import TableInputForm from "./TableInputForm";
 import Card from "../../../common/components/Card";
-import StyledCardDescription from "../../../common/components/Card/CardDescription";
+import StyledCardDescription from "../../../common/components/Card/StyledCardContent/StyledCardDescription";
 
 const ValueTableCard = () => {
     return (
