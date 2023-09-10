@@ -1,7 +1,7 @@
 import Card from "../../common/components/Card"
 import StyledCardDescription from "../../common/components/Card/StyledCardContent/StyledCardDescription"
 import CardFormulaImage from "../../common/components/Card/StyledCardContent/StyledCardFormulaImage"
-import StyledCardResult from "../../common/components/Card/StyledCardResult"
+import StyledCardResult from "../../common/components/Card/StyledCardContent/StyledCardResult"
 import { varianceFormula } from "../../common/icons"
 
 const VarianceEstimateCard = () => {

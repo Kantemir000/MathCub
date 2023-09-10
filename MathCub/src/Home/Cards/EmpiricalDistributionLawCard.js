@@ -1,7 +1,7 @@
 import Card from "../../common/components/Card"
 import StyledCardDescription from "../../common/components/Card/StyledCardContent/StyledCardDescription"
 import { StyledTableCell, StyledAnswerTableCell, StyledTableLineTitle } from "../../common/components/Table/StyledTableCells"
-import Table from "../../common/components/Table/StyledTable"
+import Table from "../../common/components/Table"
 
 const DistributionFormulaTable = () => {
     return (

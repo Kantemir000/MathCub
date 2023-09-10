@@ -2,7 +2,7 @@ import Card from "../../common/components/Card"
 import StyledCardDescription from "../../common/components/Card/StyledCardContent/StyledCardDescription"
 import CardFormulaImage from "../../common/components/Card/StyledCardContent/StyledCardFormulaImage"
 import { sampleAverageFormula } from "../../common/icons"
-import StyledCardResult from "../../common/components/Card/StyledCardResult"
+import StyledCardResult from "../../common/components/Card/StyledCardContent/StyledCardResult"
 
 const SampleAverageCard = () => {
     return (
