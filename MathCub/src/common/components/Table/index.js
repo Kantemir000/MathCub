@@ -1,17 +1,9 @@
 import styled from "styled-components"
+import StyledScrollbar from "../Card/StyledScrollbar"
 
 const StyledTableWrapper = styled.div`
     max-width: 100%;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-    }
-    &:hover {
-        scrollbar-width: thin;
-    }
+    ${StyledScrollbar}
 `
 
 const StyledTable = styled.table`
