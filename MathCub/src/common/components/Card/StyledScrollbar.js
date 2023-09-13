@@ -17,9 +17,13 @@ const StyledScrollbar = `
     /* &:hover {
         scrollbar-color: #8285a6 rgb(25, 26, 35);
     } */
-    &::-webkit-scrollbar {
+    &:hover::-webkit-scrollbar {
         height: .475rem;
         width: .375rem;
+    }
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
     }
     &::-webkit-scrollbar-track {
         background-color: transparent;
@@ -28,7 +32,7 @@ const StyledScrollbar = `
         background-color: rgb(25, 26, 35);
     }
     &::-webkit-scrollbar-thumb {
-        background-color: transparent;
+        /* background-color: transparent; */
         border-radius: 3px;
     }
     &:hover::-webkit-scrollbar-thumb {

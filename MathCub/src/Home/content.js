@@ -4,7 +4,7 @@ import ValueTableCard from "./Cards/ValueTableCard"
 import SampleAverageCard from "./Cards/SampleAverageCard"
 import VarianceEstimateCard from "./Cards/VarianceEstimate"
 import EmpiricalDistributionLawCard from "./Cards/EmpiricalDistributionLawCard"
-/* import HistogramCard from "./Cards/Histogram" */
+import HistogramCard from "./Cards/Histogram" 
 import DistributionFunctionCard from "./Cards/DistributionFunction"
 
 
@@ -20,7 +20,7 @@ const Content = () => {
                 <SampleAverageCard />
                 <VarianceEstimateCard />
                 <EmpiricalDistributionLawCard />
-                {/* <HistogramCard /> */}
+                <HistogramCard />
                 <DistributionFunctionCard />
             </StyledContainer>
         </StyledContentWrapper>

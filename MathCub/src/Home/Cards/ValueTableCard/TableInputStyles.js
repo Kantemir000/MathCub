@@ -47,14 +47,16 @@ const StyledRandomNumberInput = styled.input`
     line-height: 1em;
     font-weight: 400;
     color: rgb(137, 128, 218);
-
     &:hover {
         background-color: #2a2c3c;
         transition: all 0.3s;
     }
-
     &:focus {
         outline: 0;
+    }
+    &:invalid{
+        transition: all 0.3s;
+        border-color: #d1403f;
     }
 `
 const StyledAddButton = styled(Button)`

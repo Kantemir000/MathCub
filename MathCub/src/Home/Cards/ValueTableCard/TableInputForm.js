@@ -26,7 +26,11 @@ const NumberInput = ({ id, isLast = false }) => {
     };
 
     return (
-        <StyledRandomNumberInput onChange={handleChange} />
+        <StyledRandomNumberInput
+            onChange={handleChange}
+            inputMode="numeric"
+            pattern="[0-9\.]*"
+        />
     )
 }
 
