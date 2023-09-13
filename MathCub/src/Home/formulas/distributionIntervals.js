@@ -17,13 +17,16 @@ function distributionIntervals(inputs) {
             intervalEnd = maxValue;
         }
 
-        countInInterval = inputs.filter((value) => value >= intervalStart && value <= intervalEnd).length;
+        const start = intervalStart;
+        const end = intervalEnd;
+
+        countInInterval = inputs.filter((value) => value >= start && value <= end).length;
         percentInInterval = (countInInterval / inputs.length);
 
         if (percentInInterval > 0) {
             intervals.push({
-                start: intervalStart.toFixed(2),
-                end: intervalEnd.toFixed(2),
+                start: start.toFixed(2),
+                end: end.toFixed(2),
                 count: countInInterval,
                 percent: percentInInterval.toFixed(2),
             });
@@ -31,6 +34,7 @@ function distributionIntervals(inputs) {
 
         intervalStart = intervalEnd;
     }
-    return intervals
+    return intervals;
 }
+
 export default distributionIntervals
