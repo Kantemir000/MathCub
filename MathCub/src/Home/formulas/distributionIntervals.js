@@ -11,7 +11,7 @@ function distributionIntervals(inputs) {
     let percentInInterval;
 
     for (let i = 0; i < intervalCount; i++) {
-        intervalEnd = intervalStart + deltaValue;
+        intervalEnd = intervalStart + deltaValue - 0.01; // Изменено здесь
 
         if (i === intervalCount - 1) {
             intervalEnd = maxValue;
@@ -32,9 +32,8 @@ function distributionIntervals(inputs) {
             });
         }
 
-        intervalStart = intervalEnd;
+        intervalStart = intervalEnd + 0.01; // Изменено здесь
     }
     return intervals;
 }
-
-export default distributionIntervals
+export default distributionIntervals;
