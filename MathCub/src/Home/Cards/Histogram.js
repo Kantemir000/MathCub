@@ -29,7 +29,7 @@ const HistogramCard = () => {
                             borderRadius: 7,
                             backgroundColor: "rgb(78, 68, 165)",
                             lineTension: 0,
-                            fill: "white",
+                            fill: "false",
                             borderJoinStyle: "round",
                             data,
                             borderWidth: 1,
@@ -39,6 +39,26 @@ const HistogramCard = () => {
                             barThickness: "flex",
                         }
                     ]
+                }}
+                options={{
+                    scales: {
+                        x: {
+                            grid: {
+                                color: '#2a2c3c'
+                            },
+                            ticks: {
+                                color: 'aliceblue'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: '#2a2c3c'
+                            },
+                            ticks: {
+                                color: 'aliceblue'
+                            }
+                        }
+                    }
                 }}
             />
         </Card>

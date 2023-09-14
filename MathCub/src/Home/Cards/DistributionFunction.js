@@ -27,20 +27,43 @@ const DistributionFunctionCard = () => {
                     labels,
                     datasets: [
                         {
-                            borderColor: "#2a2c3c",
-                            borderRadius: 7,
+                            borderColor: "rgb(78, 68, 165)",
+                            pointBackgroundColor: "rgb(78, 68, 165)",
+                            pointRadius: 5,
+                            pointHoverBorderWidth: 7,
                             backgroundColor: "rgb(78, 68, 165)",
                             lineTension: 0,
-                            fill: "white",
+                            fill: "false",
                             borderJoinStyle: "round",
                             data,
                             borderWidth: 1,
                             barPercentage: 1,
                             categoryPercentage: 1,
-                            hoverBackgroundColor: "rgba(78, 68, 165, 0.8)",
+                            pointHoverBorderColor: "rgba(78, 68, 165, 0.8)",
+                            pointHoverBackgroundColor: "rgba(78, 68, 165, 0.8)",
                             barThickness: "flex",
                         }
                     ]
+                }}
+                options={{
+                    scales: {
+                        x: {
+                            grid: {
+                                color: '#2a2c3c'
+                            },
+                            ticks: {
+                                color: 'aliceblue'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: '#2a2c3c'
+                            },
+                            ticks: {
+                                color: 'aliceblue'
+                            }
+                        }
+                    }
                 }}
             />
         </Card>
