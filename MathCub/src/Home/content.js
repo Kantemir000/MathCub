@@ -4,8 +4,9 @@ import ValueTableCard from "./Cards/ValueTableCard"
 import SampleAverageCard from "./Cards/SampleAverageCard"
 import VarianceEstimateCard from "./Cards/VarianceEstimate"
 import EmpiricalDistributionLawCard from "./Cards/EmpiricalDistributionLawCard"
-import HistogramCard from "./Cards/Histogram" 
+import HistogramCard from "./Cards/Histogram"
 import DistributionFunctionCard from "./Cards/DistributionFunction"
+import AssymetryAndExcessCard from "./Cards/AssymetryAndExcess"
 
 
 const StyledContentWrapper = styled.main`
@@ -20,6 +21,7 @@ const Content = () => {
                 <SampleAverageCard />
                 <VarianceEstimateCard />
                 <EmpiricalDistributionLawCard />
+                <AssymetryAndExcessCard />
                 <HistogramCard />
                 <DistributionFunctionCard />
             </StyledContainer>
