@@ -25,6 +25,14 @@ const DistributionFormulaTable = () => {
                 <StyledTableCell>. . .</StyledTableCell>
                 <StyledTableCell>n<sub>n</sub>/n</StyledTableCell>
             </tr>
+            <tr>
+                <StyledTableLineTitle>Теоретические частоты</StyledTableLineTitle>
+                <StyledTableCell>n<sub>1</sub>/n</StyledTableCell>
+                <StyledTableCell>n<sub>2</sub>/n</StyledTableCell>
+                <StyledTableCell>n<sub>3</sub>/n</StyledTableCell>
+                <StyledTableCell>. . .</StyledTableCell>
+                <StyledTableCell>n<sub>n</sub>/n</StyledTableCell>
+            </tr>
         </Table>
     )
 }
@@ -42,9 +50,15 @@ const AnswerTable = () => {
                 ))}
             </tr>
             <tr>
-                <StyledTableLineTitle>Эмпирическая частота (%)</StyledTableLineTitle>
+                <StyledTableLineTitle>Эмпирическая частота</StyledTableLineTitle>
                 {intervals.map((interval, index) => (
                     <StyledAnswerTableCell key={index}>{interval.percent}</StyledAnswerTableCell>
+                ))}
+            </tr>
+            <tr>
+                <StyledTableLineTitle>Теоретическая частота</StyledTableLineTitle>
+                {intervals.map((interval, index) => (
+                    <StyledAnswerTableCell key={index}>{interval.probability}</StyledAnswerTableCell>
                 ))}
             </tr>
         </Table>

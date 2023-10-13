@@ -1,3 +1,5 @@
+import calculateProbabilityForInterval from "./probabilityForInterval";
+
 function distributionIntervals(inputs) {
     const maxValue = Math.max(...inputs);
     const minValue = Math.min(...inputs);
@@ -11,7 +13,7 @@ function distributionIntervals(inputs) {
     let percentInInterval;
 
     for (let i = 0; i < intervalCount; i++) {
-        intervalEnd = intervalStart + deltaValue - 0.01; // Изменено здесь
+        intervalEnd = intervalStart + deltaValue - 0.01;
 
         if (i === intervalCount - 1) {
             intervalEnd = maxValue;
@@ -24,16 +26,19 @@ function distributionIntervals(inputs) {
         percentInInterval = (countInInterval / inputs.length);
 
         if (percentInInterval > 0) {
+            const probability = calculateProbabilityForInterval(start, end);
             intervals.push({
                 start: start.toFixed(2),
                 end: end.toFixed(2),
                 count: countInInterval,
                 percent: percentInInterval.toFixed(2),
+                probability: probability.toFixed(2),
             });
         }
 
-        intervalStart = intervalEnd + 0.01; // Изменено здесь
+        intervalStart = intervalEnd + 0.01;
     }
     return intervals;
 }
-export default distributionIntervals;
+
+export default distributionIntervals
