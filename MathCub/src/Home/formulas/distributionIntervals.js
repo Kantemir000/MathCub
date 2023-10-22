@@ -26,7 +26,7 @@ function distributionIntervals(inputs) {
         percentInInterval = (countInInterval / inputs.length);
 
         if (percentInInterval > 0) {
-            const probability = calculateProbabilityForInterval(start, end);
+            const probability = calculateProbabilityForInterval(start, end, inputs);
             intervals.push({
                 start: start.toFixed(2),
                 end: end.toFixed(2),

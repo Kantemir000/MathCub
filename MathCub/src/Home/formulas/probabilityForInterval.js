@@ -1,19 +1,15 @@
-import cumulativeNormalDistribution from "./cumulativeNormalDistribution";
+import * as ss from "simple-statistics"
 
-function calculateProbabilityForInterval(a, b) {
-    const integral = (f, a, b, n) => {
-        const h = (b - a) / n;
-        let sum = 0.5 * (f(a) + f(b));
+function calculateProbabilityForInterval(a, b, inputs) {
+    const standardDeviation = ss.standardDeviation(inputs)
+    const mean = ss.mean(inputs)
+    const zA = (a - mean) / standardDeviation;
+    const zB = (b - mean) / standardDeviation;
 
-        for (let i = 1; i < n; i++) {
-            sum += f(a + i * h);
-        }
+    const probabilityA = ss.erf(zA / Math.sqrt(2));
+    const probabilityB = ss.erf(zB / Math.sqrt(2));
 
-        return sum * h;
-    };
-
-    const probability = integral(cumulativeNormalDistribution, a, b, 1000);
-    return probability;
+    return probabilityB - probabilityA;
 }
 
 export default calculateProbabilityForInterval

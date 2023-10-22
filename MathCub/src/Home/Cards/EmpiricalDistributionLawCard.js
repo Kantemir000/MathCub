@@ -25,14 +25,6 @@ const DistributionFormulaTable = () => {
                 <StyledTableCell>. . .</StyledTableCell>
                 <StyledTableCell>n<sub>n</sub>/n</StyledTableCell>
             </tr>
-            <tr>
-                <StyledTableLineTitle>Теоретические частоты</StyledTableLineTitle>
-                <StyledTableCell>n<sub>1</sub>/n</StyledTableCell>
-                <StyledTableCell>n<sub>2</sub>/n</StyledTableCell>
-                <StyledTableCell>n<sub>3</sub>/n</StyledTableCell>
-                <StyledTableCell>. . .</StyledTableCell>
-                <StyledTableCell>n<sub>n</sub>/n</StyledTableCell>
-            </tr>
         </Table>
     )
 }
