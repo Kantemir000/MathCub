@@ -27,12 +27,21 @@ function distributionIntervals(inputs) {
 
         if (percentInInterval > 0) {
             const probability = calculateProbabilityForInterval(start, end, inputs);
+
+            // Рассчитайте наблюдаемые и ожидаемые частоты для текущего интервала
+            const observed = countInInterval;
+            const expected = probability * inputs.length;
+
+            // Рассчитайте критерий Пирсона для текущего интервала
+            const term = Math.pow(observed - expected, 2) / expected;
+
             intervals.push({
                 start: start.toFixed(2),
                 end: end.toFixed(2),
                 count: countInInterval,
                 percent: percentInInterval.toFixed(2),
                 probability: probability.toFixed(2),
+                chiSquare: term.toFixed(2), // Добавьте критерий Пирсона в объект интервала
             });
         }
 

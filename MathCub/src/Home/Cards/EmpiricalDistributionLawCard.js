@@ -33,6 +33,7 @@ const AnswerTable = () => {
     const inputs = filterInputs(useSelector((state) => state.randomInputSlice.inputs));
     const intervals = distributionIntervals(inputs);
 
+
     return (
         <Table>
             <tr>
@@ -51,6 +52,12 @@ const AnswerTable = () => {
                 <StyledTableLineTitle>Теоретическая частота</StyledTableLineTitle>
                 {intervals.map((interval, index) => (
                     <StyledAnswerTableCell key={index}>{interval.probability}</StyledAnswerTableCell>
+                ))}
+            </tr>
+            <tr>
+                <StyledTableLineTitle>Критерий Пирсона</StyledTableLineTitle>
+                {intervals.map((interval, index) => (
+                    <StyledAnswerTableCell key={index}>{interval.chiSquare}</StyledAnswerTableCell>
                 ))}
             </tr>
         </Table>
