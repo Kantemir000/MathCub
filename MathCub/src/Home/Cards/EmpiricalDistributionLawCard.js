@@ -31,8 +31,6 @@ const DistributionFormulaTable = () => {
 }
 
 const AnswerTable = ({intervals}) => {
-    console.log(intervals)
-    console.log(intervals.length) 
     if (intervals.length === 0) {
         return null
     }

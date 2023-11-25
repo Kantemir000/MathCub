@@ -2,7 +2,6 @@ import * as ss from "simple-statistics"
 import uniqueInputs from "./uniqueInputs";
 
 function calculateChiSquare(intervals, inputs) {
-    const size = inputs.length;
     const unique = uniqueInputs(inputs) || 1
     const chiSquare = intervals.reduce(
         (acc, interval) => 
