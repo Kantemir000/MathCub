@@ -5,6 +5,7 @@ import Table from "../../common/components/Table"
 import { useSelector } from "react-redux"
 import filterInputs from "../formulas/filterInputs"
 import distributionIntervals from "../formulas/distributionIntervals"
+import calculateChiSquare from "../formulas/chiSquare"
 
 const DistributionFormulaTable = () => {
     return (
@@ -29,11 +30,12 @@ const DistributionFormulaTable = () => {
     )
 }
 
-const AnswerTable = () => {
-    const inputs = filterInputs(useSelector((state) => state.randomInputSlice.inputs));
-    const intervals = distributionIntervals(inputs);
-
-
+const AnswerTable = ({intervals}) => {
+    console.log(intervals)
+    console.log(intervals.length) 
+    if (intervals.length === 0) {
+        return null
+    }
     return (
         <Table>
             <tr>
@@ -54,23 +56,24 @@ const AnswerTable = () => {
                     <StyledAnswerTableCell key={index}>{interval.probability}</StyledAnswerTableCell>
                 ))}
             </tr>
-            <tr>
-                <StyledTableLineTitle>Критерий Пирсона</StyledTableLineTitle>
-                {intervals.map((interval, index) => (
-                    <StyledAnswerTableCell key={index}>{interval.chiSquare}</StyledAnswerTableCell>
-                ))}
-            </tr>
         </Table>
     );
 };
 
 const EmpiricalDistributionLawCard = () => {
+    const inputs = filterInputs(useSelector((state) => state.randomInputSlice.inputs));
+    const intervals = distributionIntervals(inputs);
+    const chiSquare = calculateChiSquare(intervals, inputs);
     return (
         <Card title="Эмпирический закон распределения">
             <StyledCardDescription>Формула:</StyledCardDescription>
             <DistributionFormulaTable />
             <StyledCardDescription>Ответ:</StyledCardDescription>
-            <AnswerTable />
+            <AnswerTable intervals = {intervals}/>
+            <StyledCardDescription>Критерий пирсона для выборки: {chiSquare.chiSquare}</StyledCardDescription>
+            <StyledCardDescription>Табличное значение {chiSquare.chiSquareTableValue}</StyledCardDescription>
+            <StyledCardDescription>{chiSquare.result ? "Расчитанный критерий пирсона не превышает табличное значение, следовательно выборка чисел подчиняется нормальному закону" 
+            : "Расчитанный критерий превышает табличное значение, следовательно выборка чисел НЕ подчиняется нормальному закону"}</StyledCardDescription>
         </Card>
     )
 }
