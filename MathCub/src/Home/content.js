@@ -7,6 +7,7 @@ import EmpiricalDistributionLawCard from "./Cards/EmpiricalDistributionLawCard"
 import HistogramCard from "./Cards/Histogram"
 import DistributionFunctionCard from "./Cards/DistributionFunction"
 import AssymetryAndExcessCard from "./Cards/AssymetryAndExcess"
+import FisherSnedecorCard from "./Cards/FisherSnedecorCard"
 
 
 const StyledContentWrapper = styled.main`
@@ -24,6 +25,7 @@ const Content = () => {
                 <AssymetryAndExcessCard />
                 <HistogramCard />
                 <DistributionFunctionCard />
+                <FisherSnedecorCard />
             </StyledContainer>
         </StyledContentWrapper>
     )

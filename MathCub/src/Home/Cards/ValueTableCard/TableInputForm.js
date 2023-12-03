@@ -62,3 +62,4 @@ const TableInputForm = () => {
 }
 
 export default TableInputForm
+export {TableInputForm}
