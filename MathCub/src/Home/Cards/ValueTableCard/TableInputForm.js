@@ -1,65 +1,45 @@
 import { StyledAddButton, StyledRandomForm, StyledRandomNumbers, StyledRandomNumberInput, StyledRandom } from "./TableInputStyles"
-import { useSelector, useDispatch } from "react-redux"
-import { changeInput, addInput } from "../../../store/slices/randomInputSlice"
 
-const AddButton = () => {
-    const dispatch = useDispatch();
-
-    const handleClick = () => {
-        dispatch(addInput());
-    }
-
+const AddButton = ({ handleAdd }) => {
     return (
-        <StyledAddButton onClick={handleClick} />
+        <StyledAddButton onClick={handleAdd} />
     )
 }
 
-const NumberInput = ({ id, isLast = false }) => {
-    const dispatch = useDispatch();
-
-    const handleChange = (e) => {
-        const { value } = e.target
-        if (isLast) {
-            dispatch(addInput())
-        }
-        dispatch(changeInput({ id, value }))
-    };
-
+const NumberInput = ({ id, isLast = false, handleChange }) => {
     return (
         <StyledRandomNumberInput
-            onChange={handleChange}
+            onChange={(e) => handleChange(e.target.value, id, isLast)}
             inputMode="numeric"
             pattern="[0-9\.]*"
         />
     )
 }
 
-const TableInputs = () => {
-    const { inputs } = useSelector((state) => state.randomInputSlice);
-
+const TableInputs = ({ data, handleChange }) => {
     return (
         <>
-            {inputs.map((_, index) => {
+            {data.map((_, index) => {
                 return (
-                    <NumberInput id={index} key={index} isLast={index === inputs.length - 1} />
+                    <NumberInput handleChange={handleChange} id={index} key={index} isLast={index === data.length - 1} />
                 )
             })}
         </>
     )
 }
 
-const TableInputForm = () => {
+const TableInputForm = ({ handleAdd, handleChange, data }) => {
     return (
         <StyledRandomForm>
             <StyledRandom>
                 <StyledRandomNumbers>
-                    <TableInputs />
+                    <TableInputs data={data} handleChange={handleChange} />
                 </StyledRandomNumbers>
-                <AddButton />
+                <AddButton handleAdd={handleAdd} />
             </StyledRandom>
         </StyledRandomForm>
     )
 }
 
 export default TableInputForm
-export {TableInputForm}
+export { TableInputForm }
