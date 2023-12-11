@@ -7,6 +7,8 @@ import { useSampleState } from "../../common/hooks/useSampleState";
 import * as ss from "simple-statistics"
 import filterInputs from "../formulas/filterInputs";
 import { useEffect } from "react";
+import Table from "../../common/components/Table"
+import { StyledAnswerTableCell } from "../../common/components/Table/StyledTableCells"
 
 const CorrelationAnalysis = () => {
     const [correlations, setCorrelations] = useState({})
@@ -42,7 +44,7 @@ const CorrelationAnalysis = () => {
             <TableInputForm handleAdd={handleYSampleAdd} handleChange={handleYSampleChange} data={ySample} />
             <StyledCardDescription>Выборка Z:</StyledCardDescription>
             <TableInputForm handleAdd={handleZSampleAdd} handleChange={handleZSampleChange} data={zSample} />
-            
+
             {!correlations ? <StyledCardDescription>Для формирования корреляций все выборки должны быть одинакового размера</StyledCardDescription> :
                 <>
                     <StyledCardDescription>Корреляция X и Y: </StyledCardDescription>
@@ -52,7 +54,32 @@ const CorrelationAnalysis = () => {
                     <StyledCardDescription>Корреляция Y и Z: </StyledCardDescription>
                     <StyledCardResult>{correlations.yz}</StyledCardResult>
                 </>}
+
+            {!correlations ? <StyledCardDescription>Для формирования корреляций все выборки должны быть одинакового размера</StyledCardDescription> :
+                <>
+                    <StyledCardDescription>Матрица коэффициентов парных корреляций:</StyledCardDescription>
+                    <Table>
+                        <tr>
+                            <StyledAnswerTableCell>1</StyledAnswerTableCell>
+                            <StyledAnswerTableCell>{correlations.xy}</StyledAnswerTableCell>
+                            <StyledAnswerTableCell>{correlations.xz}</StyledAnswerTableCell>
+                        </tr>
+                        <tr>
+                            <StyledAnswerTableCell></StyledAnswerTableCell>
+                            <StyledAnswerTableCell>1</StyledAnswerTableCell>
+                            <StyledAnswerTableCell>{correlations.yz}</StyledAnswerTableCell>
+                        </tr>
+                        <tr>
+                            <StyledAnswerTableCell></StyledAnswerTableCell>
+                            <StyledAnswerTableCell></StyledAnswerTableCell>
+                            <StyledAnswerTableCell>1</StyledAnswerTableCell>
+                        </tr>
+                    </Table>
+                </>}
+
+
         </Card>
+
     )
 }
 
