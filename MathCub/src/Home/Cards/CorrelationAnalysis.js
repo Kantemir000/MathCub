@@ -55,7 +55,7 @@ const CorrelationAnalysis = () => {
                     <StyledCardResult>{correlations.yz}</StyledCardResult>
                 </>}
 
-            {!correlations ? <StyledCardDescription>Для формирования корреляций все выборки должны быть одинакового размера</StyledCardDescription> :
+            {!correlations ? <StyledCardDescription></StyledCardDescription> :
                 <>
                     <StyledCardDescription>Матрица коэффициентов парных корреляций:</StyledCardDescription>
                     <Table>
